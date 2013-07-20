@@ -40,8 +40,5 @@
 		base-package="org.crowdguru.webapp.controller,
 										  org.crowdguru.webapp.configuration,
 										  org.crowdguru.webapp.security,
-										  org.crowdguru.webapp.builder" />
-										  
-	<import resource="datastore.xml" />
-	
+										  org.crowdguru.webapp.builder" />	
 </beans>
