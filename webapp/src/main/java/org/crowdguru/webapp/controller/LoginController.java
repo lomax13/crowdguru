@@ -11,11 +11,7 @@ public class LoginController {
 	
 	@RequestMapping("/login")
 	public String index(Model m) {
-		log().info("Context path '" + context.getContextPath() + "'");
-		m.addAttribute("contextPath", context.getContextPath());
-		return "login";
+		return "signin";
 	}
 	
-	@Autowired
-	private HttpServletRequest context;
 }
