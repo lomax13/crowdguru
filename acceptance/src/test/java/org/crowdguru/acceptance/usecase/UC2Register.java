@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 
 public class UC2Register{
 
-	WebDriverFactory driverFactory = WebDriverGateway.getFirefoxFactory();
+	WebDriverFactory driverFactory = WebDriverGateway.getPhantomJSFactory();
 	WebDriver driver;
 	
 	@Before
@@ -42,7 +42,7 @@ public class UC2Register{
         driver.findElement(By.xpath("//input[@id='inputPassword']"))
         	.sendKeys("password1");
         
-        driver.findElement(By.xpath("//a[contains(text(),'Save details and continue registration later')]"))
+        driver.findElement(By.xpath("//input[@value='Save details and continue registration later']"))
     		.click();
 	}
 	
