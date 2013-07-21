@@ -7,4 +7,6 @@
 
 	<!-- Load datastore submodule context -->
 	<import resource="classpath:datastoreContext.xml"/>
+	
+	
 </beans>
