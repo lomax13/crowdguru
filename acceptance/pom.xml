@@ -19,9 +19,12 @@
 		<cargo.version>1.4.2</cargo.version>
 		<phantomjsdriver.version>1.0.3</phantomjsdriver.version>
 		<selenium.version>2.33.0</selenium.version>
+		<cuke.version>1.1.3</cuke.version>
+		<surefire.version>2.14.1</surefire.version>
 		<aspetj.plugin.version>1.2</aspetj.plugin.version>
 		<deployable.name>crowdguru</deployable.name>
 		<deployable.path>${basedir}/../webapp/target/${deployable.name}.war</deployable.path>
+        <skipTests>false</skipTests>
 	</properties>
 	
 	<build>
@@ -101,19 +104,34 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>failsafe-maven-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit47</artifactId>
+                        <version>${surefire.version}</version>
+                    </dependency>
+                </dependencies>
 				<configuration>
 					<includes>
-						<include>**/usecase/*.java</include>
+						<include>src/test/java/TestRunner.java</include>
 					</includes>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>integration-test</goal>
-							<goal>verify</goal>
-						</goals>
-					</execution>
-				</executions>
+                <executions>
+                    <execution>
+                        <id>integration-test</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>verify</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -136,6 +154,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 		
@@ -145,8 +164,20 @@
 			<version>${selenium.version}</version>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>1.1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>1.1.3</version>
+            <scope>test</scope>
+        </dependency>
 
-		<dependency>
+        <dependency>
 			<groupId>com.github.detro.ghostdriver</groupId>
 			<artifactId>phantomjsdriver</artifactId>
 			<version>${phantomjsdriver.version}</version>
