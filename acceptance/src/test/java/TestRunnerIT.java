@@ -9,7 +9,7 @@ import static java.lang.ClassLoader.getSystemResourceAsStream;
 
 @RunWith(Cucumber.class)
 @Cucumber.Options(features={"src/test/resources/usecases"})
-public class TestRunner {
+public class TestRunnerIT {
     //Load test properties so that tests could be invoked with properties both from Runner and maven
     @BeforeClass
     public static void initTestRunnerWithFileLoadedProperties() throws IOException {

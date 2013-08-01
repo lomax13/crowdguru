@@ -4,7 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class HomePage extends BasePage {
-    private final String HOME_PAGE_URL = "http://localhost:8080/crowdguru";
+
+    private String homePageURL=System.getProperty("applicationURL");
 
     private static HomePage PAGE_INSTANCE = new HomePage();
 
@@ -19,7 +20,7 @@ public class HomePage extends BasePage {
 
 
     public void load() {
-        driver.get(HOME_PAGE_URL);
+        driver.get(homePageURL);
     }
 
 
