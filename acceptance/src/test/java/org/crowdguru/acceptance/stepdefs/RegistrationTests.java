@@ -4,10 +4,9 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.crowdguru.acceptance.model.HomePage;
-import org.crowdguru.acceptance.model.LoginPage;
-import org.crowdguru.acceptance.model.RegistrationPage;
-import org.openqa.selenium.WebDriver;
+import org.crowdguru.acceptance.pages.HomePage;
+import org.crowdguru.acceptance.pages.LoginPage;
+import org.crowdguru.acceptance.pages.RegistrationPage;
 
 public class RegistrationTests {
     private HomePage homePage = HomePage.getInstance();
