@@ -5,3 +5,11 @@ ephemeral
 .classpath
 .springBeans
 webapp/target
+.idea
+ajcore*.txt
+*.iml
+webapp/phantomjsdriver.log
+
+
+
+
