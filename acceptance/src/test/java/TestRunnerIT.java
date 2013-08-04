@@ -8,7 +8,7 @@ import java.util.Properties;
 import static java.lang.ClassLoader.getSystemResourceAsStream;
 
 @RunWith(Cucumber.class)
-@Cucumber.Options(features={"src/test/resources/usecases"})
+@Cucumber.Options(features={"src/test/resources/usecases"},tags ="@automated")
 public class TestRunnerIT {
     //Load test properties so that tests could be invoked with properties both from Runner and maven
     @BeforeClass
